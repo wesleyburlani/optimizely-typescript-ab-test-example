@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  web:
+    build: docker/development
+    environment:
+      NODE_PATH: /app/optimizely
+      VIRTUAL_HOST: optimizely.localtest.me
+      VIRTUAL_PORT: 6000
+    ports:
+      - "6000:3000"
+    networks:
+      default:
+        aliases:
+          - optimizely.localtest.me
+      proxy:
+        aliases:
+          - optimizely.localtest.me
+    volumes:
+      - .:/app
+
+networks:
+  proxy:
+    external: true
