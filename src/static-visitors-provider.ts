@@ -1,7 +1,8 @@
 import { Visitor } from "./intefaces/visitor";
+import { VisitorsProvider } from "./intefaces/visitors-provider";
 
-export class VisitorsProvider {
-    public static getVisitors(): Visitor[] {
+export class StaticVisitorsProvider implements VisitorsProvider {
+    getVisitors(): Visitor[] {
         return [
             { userId: 'alice', },
             { userId: 'bob', },
