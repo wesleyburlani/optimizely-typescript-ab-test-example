@@ -1,6 +1,6 @@
 import { Visitor } from "./intefaces/visitor";
 
-export class VisitorsGenerator {
+export class VisitorsProvider {
     public static getVisitors(): Visitor[] {
         return [
             { userId: 'alice', },
